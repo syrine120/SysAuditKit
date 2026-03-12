@@ -1,0 +1,48 @@
+#!/bin/bash
+
+MODULE_DIR="$(dirname "$0")/modules"
+LOG_FILE="/var/log/sysauditkit.log"
+CONFIG_FILE="/etc/sysauditkit/config.cfg"
+
+sudo mkdir -p /var/log/sysauditkit
+sudo touch "$LOG_FILE"
+sudo chmod 644 "$LOG_FILE"
+
+sudo mkdir -p /etc/sysauditkit
+sudo touch "$CONFIG_FILE"
+sudo chmod 644 "$CONFIG_FILE"
+
+log() {
+    local MESSAGE="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $MESSAGE" | sudo tee -a "$LOG_FILE" > /dev/null
+}
+
+help() {
+    cat <<EOF
+SysAuditKit - commandes disponibles :
+  init      - Initialiser la machine et créer l'utilisateur
+  report    - Générer un rapport système
+  search    - Rechercher fichiers et mots-clés
+  monitor   - Surveiller et gérer les processus
+  help      - Afficher cette aide
+EOF
+}
+
+case "$1" in
+    init)
+        bash "$MODULE_DIR/init.sh"
+        ;;
+    report)
+        bash "$MODULE_DIR/report.sh"
+        ;;
+    search)
+        bash "$MODULE_DIR/search.sh" "$2" "$3" "$4"
+        ;;
+    monitor)
+        bash "$MODULE_DIR/monitor.sh"
+        ;;
+    help|*)
+        help
+        ;;
+esac
+

@@ -1,0 +1,8 @@
+Package: sysauditkit
+Version: 1.0
+Section: utils
+Priority: 
+Architecture: all
+Maintainer: Sirine <kanboui.sirine@gmail.com>
+Description: Outil d'audit et gestion basique pour Linux
+Depends: bash

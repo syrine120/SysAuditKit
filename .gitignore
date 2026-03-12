@@ -1,0 +1,5 @@
+*.deb
+*.txt
+*.log
+debian/files/
+debian/.debhelper/
