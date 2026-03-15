@@ -34,7 +34,7 @@ sudo dpkg -i sysauditkit_1.0_all.deb
 # Résoudre les dépendances si nécessaire
 sudo apt-get install -f
 
-Méthode 2 : Build depuis les sources
+### Méthode 2 : Build depuis les sources
 # Cloner le dépôt
 git clone https://github.com/syrine120/SysAuditKit.git
 cd SysAuditKit
