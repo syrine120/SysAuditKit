@@ -133,7 +133,7 @@ Exemple de log :
 Désinstallation
   Pour supprimer complètement l'outil et ses fichiers de configuration :
   sudo dpkg -r sysauditkit
-
+```
 Notes de Sécurité
 
     Ne jamais exécuter les scripts sans privilèges sudo pour les modules init, report, et monitor
