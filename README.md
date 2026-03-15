@@ -24,8 +24,7 @@ SysAuditKit est un ensemble de scripts shell automatisés permettant l'initialis
 - Privilèges : `sudo` requis
 - Outils : `dpkg`, `apt`
 
- Méthode 1 : Installation depuis le paquet .deb
-```bash
+### Méthode 1 : Installation depuis le paquet .deb
 # Télécharger le paquet
 wget https://github.com/syrine120/SysAuditKit/releases/download/v1.0/sysauditkit_1.0_all.deb
 
